@@ -35,9 +35,10 @@ include("connection.php");
         <div class="navbar">
             <a href=""><img src="unerground aberdeen.png" width="200" class="logo"></a>
             <ul>
+            <li><a href="adminlogin.php">Admin Login</a></li>
                 <li><a href="Homepage.html">Home</a></li>
-                 <li><a href="#">Help & Support</a>    <ion-icon name="call-outline" style= "font-size: 20px; color: #fff;"  ></ion-icon></li>
-                <li><a href="#">About</a></li>
+                 <li><a href="contact.html">Help & Support</a>    <ion-icon name="call-outline" style= "font-size: 20px; color: #fff;"  ></ion-icon></li>
+                <li><a href="about.html">About</a></li>
             </ul>
         </div>
     <div class="login" >
@@ -56,7 +57,7 @@ include("connection.php");
             <div>
             <button type="submit" class="log-btn"><span></span>Log in</button>
             <p class="text-divider">Or</p>
-                <P>Forgot password?? <a href="forgotpassword.html">Click Here </a> </P>
+            <P>Forgot password?? <a href="forgotpassword.html">Click Here </a> </P>
             <p>Don't have an account?</p>
             <button type="button" class="log-btn"><a href="Signup.php" style="color: white; text-decoration: none;">Sign in</button></a>
             </div>

@@ -56,6 +56,7 @@ include("connection.php");
             <div>
             <button type="submit" class="log-btn"><span></span>Log in</button>
             <p class="text-divider">Or</p>
+                <P>Forgot password?? <a href="forgotpassword.html">Click Here </a> </P>
             <p>Don't have an account?</p>
             <button type="button" class="log-btn"><a href="Signup.php" style="color: white; text-decoration: none;">Sign in</button></a>
             </div>

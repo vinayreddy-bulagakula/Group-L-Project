@@ -1,0 +1,5 @@
+{
+    "require-dev": {
+        "tecnick.com/tcpdf": "^6.7"
+    }
+}

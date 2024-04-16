@@ -1,40 +1,38 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Establish connection to the database
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "databases";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "database1";
 
-    $conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Retrieve form data
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $number= $_POST['number'];
-
-    // Hash the password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    // Insert user into database
-    $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashed_password')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo '<p <a href="" style="color: #f2eded;">Signup successful!</p>';
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-    $conn->close();
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>
-<!DOCTYPE html>
+<?php
+if(isset($_POST['register'])){
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $phone= $_POST['phone'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+    
+    if($password !== $confirm_password){
+        echo "Passwords do not match!";
+    } else {
+        
+        $sql = "INSERT INTO login1 (fullname, email, phone, password) VALUES ('$fullname', '$email', '$phone', '$password')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Registration successful!";
+            header("location:login1.php");
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+}
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -55,11 +53,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
 <div class="container">
-    <form action="#" method="POST">
+    <form action="" method="post">
         <h2>Sign Up</h2>
         <div class="form-group">
-            <label for="name">Full name</label>
-            <input type="text" id="username" name="username" placeholder="Full Name" required>
+            <label for="text">Full name</label>
+            <input type="text" id="name" name="fullname" placeholder="Full Name" required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
@@ -68,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
          <div class="form-group">
             <label for="mobile">Phone Number</label>
-            <input type="text" id="number" name="number" placeholder="Your phone number" required>
+            <input type="text" id="phone number" name="phone" placeholder="Your phone number" required>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
@@ -77,11 +75,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
         <div class="form-group">
             <label for="confirm-password">Confirm Password</label>
-            <input type="password" id="password" name="password" placeholder="Confirm your password" required>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
         </div>
         <p><input type="checkbox">Agree to the terms & conditions</p>
-        <button type="submit">Sign Up</button>
-        <p>Already have an account? <a href="loginabb.html">Log In</a></p>
+        <button type="submit" name=register>Sign in</button>
+        <p>Already have an account? <a href="login1.php">Log In</a></p>
     </form>
 </div>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

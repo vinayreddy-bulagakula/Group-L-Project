@@ -74,7 +74,8 @@
     margin-left: 10px;
 }
 
-.booking-form input[type="text"]{
+.booking-form input[type="text"]
+{
     width: 10%;
     padding: 10px;
     

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="routes.css">
+<title>Add Bus Route</title>
+</head>
+<body>
+  <div class="navbar">
+    <a href=""><img src="unerground aberdeen.png" width="200" class="logo"></a>
+    <ul>
+        <li><a href="admin.php">Admin Dashboard</a></li>
+        <li><a href="logout.php">Logout</a></li>
+    </ul>
+</div>
+
+<h2>Add Bus Route</h2>
+<form action="add_route.php" method="post">
+  <div class="container" >
+  <label for="origin">Origin:</label>
+  <input type="text" id="origin" name="origin" required><br><br>
+  
+  <label for="destination">Destination:</label>
+  <input type="text" id="destination" name="destination" required><br><br>
+  
+  <label for="departure_time">Departure Time:</label>
+  <input type="time" id="departure_time" name="departure_time" required><br><br>
+  
+  <label for="arrival_time">Arrival Time:</label>
+  <input type="time" id="arrival_time" name="arrival_time" required><br><br>
+  
+  <label for="fare">Fare:</label>
+  <input type="text" id="fare" name="fare" required><br><br>
+  
+  <input type="submit" value="Submit">
+  </div>
+</form>
+
+</body>
+</html>
